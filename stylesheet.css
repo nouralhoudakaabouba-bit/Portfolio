@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +28,6 @@ body {
 }
 
 .logo {
-    position: relative;
     font-size: 30px;
     color: #fff;
     text-decoration: none;
@@ -67,8 +65,8 @@ body {
     position: relative;
 
     width: 100%;
-    min-height: 100vh; /* FIX IMPORTANT */
-    height: auto;      /* FIX IMPORTANT */
+    min-height: 100vh;
+    height: auto;
 
     display: flex;
     justify-content: space-between;
@@ -77,8 +75,8 @@ body {
     padding: 70px 10% 0;
 
     background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('./images/background.jpg') no-repeat;
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('./images/background.jpg') no-repeat;
 
     background-size: cover;
     background-position: center;
@@ -86,7 +84,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* ================= TEXT CONTENT ================= */
+/* ================= TEXT ================= */
 
 .home-content {
     max-width: 650px;
@@ -105,7 +103,6 @@ body {
     margin-bottom: 30px;
 
     animation: slideTop 1s ease forwards;
-    animation-delay: .7s;
 }
 
 .home-content h3 span {
@@ -132,7 +129,7 @@ body {
     animation-delay: 1s;
 }
 
-/* ================= SOCIAL ICONS ================= */
+/* ================= SOCIAL ================= */
 
 .home-sci a {
     display: inline-flex;
@@ -143,7 +140,6 @@ body {
     width: 45px;
     height: 45px;
 
-    background: transparent;
     border: 2px solid #0ef;
     border-radius: 50%;
 
@@ -153,11 +149,11 @@ body {
 
     transition: .5s ease;
 
+    margin: 30px 15px 30px 0;
+
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
-
-    margin: 30px 15px 30px 0;
 }
 
 .home-sci a:hover {
@@ -179,7 +175,6 @@ body {
     font-size: 16px;
     color: #081b29;
 
-    letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
 
@@ -187,18 +182,14 @@ body {
     animation: slideTop 1s ease forwards;
     animation-delay: 2s;
 
-    box-shadow:
-    0 0 5px #0ef,
-    0 0 25px #0ef;
+    box-shadow: 0 0 25px #0ef;
 }
 
 .btn-box:hover {
     box-shadow:
-    0 0 5px cyan,
-    0 0 25px cyan,
-    0 0 50px cyan,
-    0 0 100px cyan,
-    0 0 200px cyan;
+        0 0 5px cyan,
+        0 0 25px cyan,
+        0 0 50px cyan;
 }
 
 /* ================= IMAGE ================= */
@@ -212,8 +203,8 @@ body {
 
     opacity: 0;
     animation:
-    slideLeft 1s ease forwards,
-    floatImage 4s ease-in-out infinite;
+        slideLeft 1s ease forwards,
+        floatImage 4s ease-in-out infinite;
 
     animation-delay: 1s, 2s;
 }
@@ -222,22 +213,17 @@ body {
 
 @keyframes slideRight {
     0% { transform: translateX(-100px); opacity: 0; }
-    100% { transform: translateX(0px); opacity: 1; }
+    100% { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes slideLeft {
     0% { transform: translateX(100px); opacity: 0; }
-    100% { transform: translateX(0px); opacity: 1; }
+    100% { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes slideTop {
     0% { transform: translateY(100px); opacity: 0; }
-    100% { transform: translateY(0px); opacity: 1; }
-}
-
-@keyframes slideBottom {
-    0% { transform: translateY(-100px); opacity: 0; }
-    100% { transform: translateY(0px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes floatImage {
@@ -246,22 +232,14 @@ body {
     100% { transform: translateY(0); }
 }
 
-/* ================= RESPONSIVE FIX ================= */
+/* ================= RESPONSIVE SIMPLE ================= */
 
-/* TABLET */
 @media (max-width: 1024px) {
-
     .home {
         flex-direction: column;
-        justify-content: center;
         text-align: center;
-
-        min-height: 100vh;
+        justify-content: center;
         padding: 120px 10% 60px;
-    }
-
-    .home-content {
-        max-width: 100%;
     }
 
     .home-img img {
@@ -278,376 +256,18 @@ body {
     }
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
-
-    .header {
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .logo {
-        font-size: 22px;
-    }
-
-    .navbar a {
-        font-size: 14px;
-        margin-left: 10px;
-    }
-
     .home {
         flex-direction: column;
-        justify-content: center;
         text-align: center;
-
-        min-height: 100vh;
         padding: 130px 5% 50px;
+    }
+
+    .home-img img {
+        width: 220px;
     }
 
     .home-content h1 {
         font-size: 32px;
     }
-
-    .home-content h3 {
-        font-size: 20px;
-    }
-
-    .home-content p {
-        font-size: 15px;
-    }
-
-    .home-img img {
-        width: 220px;
-        margin-top: 25px;
-    }
-
-    .home-sci {
-        justify-content: center;
-    }
-}
-
-/* SMALL MOBILE */
-@media (max-width: 480px) {
-
-    .logo {
-        font-size: 18px;
-    }
-
-    .navbar a {
-        font-size: 12px;
-        margin-left: 8px;
-    }
-
-    .home-content h1 {
-        font-size: 26px;
-    }
-
-    .home-content h3 {
-        font-size: 18px;
-    }
-
-    .home-content p {
-        font-size: 14px;
-    }
-
-    .home-img img {
-        width: 180px;
-    }
-
-    .btn-box {
-        padding: 10px 18px;
-        font-size: 13px;
-    }
-}
-
-/* SMOOTH SCROLL */
-html {
-    scroll-behavior: smooth;
-=======
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    color: #ededed;
-    overflow-x: hidden;
-}
-
-/* ================= HEADER ================= */
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    background: transparent;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    z-index: 100;
-}
-
-.logo {
-    position: relative;
-    font-size: 30px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-}
-
-.navbar a {
-    display: inline-block;
-
-    font-size: 22px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-
-    margin-left: 35px;
-
-    transition: .3s;
-
-    opacity: 0;
-    animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s * var(--i));
-}
-
-.navbar a:hover,
-.navbar a.active {
-    color: #0ef;
-}
-
-/* ================= HOME SECTION ================= */
-
-.home {
-    position: relative;
-
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 70px 10% 0;
-
-    background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('./images/background.jpg') no-repeat;
-
-    background-size: cover;
-    background-position: center;
-}
-
-/* ================= TEXT CONTENT ================= */
-
-.home-content {
-    max-width: 650px;
-}
-
-.home-content h3 {
-    font-size: 32px;
-    font-weight: 700;
-
-    opacity: 0;
-    animation: slideBottom 1s ease forwards;
-    animation-delay: .7s;
-}
-
-.home-content h3:nth-of-type(2) {
-    margin-bottom: 30px;
-
-    animation: slideTop 1s ease forwards;
-    animation-delay: .7s;
-}
-
-.home-content h3 span {
-    color: #0ef;
-}
-
-.home-content h1 {
-    font-size: 62px;
-    font-weight: 700;
-
-    margin: -3px 0;
-
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-    animation-delay: 1s;
-}
-
-.home-content p {
-    font-size: 20px;
-    line-height: 1.6;
-
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
-}
-
-/* ================= SOCIAL ICONS ================= */
-
-.home-sci a {
-    display: inline-flex;
-
-    justify-content: center;
-    align-items: center;
-
-    width: 45px;
-    height: 45px;
-
-    background: transparent;
-    border: 2px solid #0ef;
-    border-radius: 50%;
-
-    font-size: 22px;
-    color: #0ef;
-    text-decoration: none;
-
-    transition: .5s ease;
-
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
-
-    margin: 30px 15px 30px 0;
-}
-
-.home-sci a:hover {
-    background: #0ef;
-    color: #081b29;
-
-    box-shadow: 0 0 20px #0ef;
-}
-
-/* ================= BUTTON ================= */
-
-.btn-box {
-    display: inline-block;
-
-    padding: 12px 28px;
-
-    background: #0ef;
-    border-radius: 40px;
-
-    font-size: 16px;
-    color: #081b29;
-
-    letter-spacing: 1px;
-    text-decoration: none;
-    font-weight: 600;
-
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    animation-delay: 2s;
-
-    box-shadow:
-    0 0 5px #0ef,
-    0 0 25px #0ef;
-}
-
-.btn-box:hover {
-    box-shadow:
-    0 0 5px cyan,
-    0 0 25px cyan,
-    0 0 50px cyan,
-    0 0 100px cyan,
-    0 0 200px cyan;
-}
-
-/* ================= IMAGE ================= */
-
-.home-img img {
-    width: 420px;
-
-    animation: floatImage 4s ease-in-out infinite;
-
-    filter: drop-shadow(0 0 30px #0ef);
-
-    opacity: 0;
-    animation:
-    slideLeft 1s ease forwards,
-    floatImage 4s ease-in-out infinite;
-
-    animation-delay: 1s, 2s;
-}
-
-/* ================= ANIMATIONS ================= */
-
-@keyframes slideRight {
-
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes slideLeft {
-
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes slideTop {
-
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes slideBottom {
-
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes floatImage {
-
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
->>>>>>> e6d1000fe173f38bc5f5b9462e678f2fd4ede1f5
 }
